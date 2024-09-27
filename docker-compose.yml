@@ -1,0 +1,49 @@
+networks:
+  dev:
+    driver: bridge
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    # restart: always
+    ports:
+      # - "80:80"
+      - "443:443"
+    volumes: 
+      - ./nginx:/etc/nginx/conf.d/
+      - /home/toor/data/nginxlogs:/var/log/nginx
+      - /home/toor/certs/tutorial/dev-nginx-tls-crt.pem:/etc/ssl/certs/dev-nginx-tls-crt.pem
+      - /home/toor/certs/tutorial/dev-nginx-tls-key.pem:/etc/ssl/private/dev-nginx-tls-key.pem
+    networks:
+      - dev
+
+  server:
+    build:
+      context: ./server
+      dockerfile: server.Dockerfile
+    image: dev-server
+    container_name: dev_server
+    tty: true
+    # restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    networks:
+      - dev
+
+  client:
+    build:
+      context: ./client
+      dockerfile: client.Dockerfile
+    image: dev-client
+    container_name: dev_client
+    tty: true
+    # restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    networks:
+      - dev
