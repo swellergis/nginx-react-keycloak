@@ -1,4 +1,4 @@
-// import Box from '@mui/material/Box';
+import Box from '@mui/material/Box';
 // import Navs from '../components/topnav';
 // import Sidenavs from '../components/sidenav';
 import { useKeycloak } from '@react-keycloak/web';
@@ -12,14 +12,18 @@ function MainPage() {
 				<table className='mptable'>
 					<tr>
 						<td className='sidenavtd'>
-							<div style={{border: 'solid 1px green'}}>
-								<h1>side-nav</h1>
-							</div>
+							<Box sx={{ position: 'sticky', top: 0, border: 'solid 1px gold' }}>
+                                <div>
+									<h1>side-nav</h1>
+                                </div>
+							</Box>
 						</td>
 						<td class="asn-page-route-td">
-							<div class="asn-page-div" style={{border: 'solid 1px gold'}}>
-								<MainComponent />
-							</div>
+							<Box sx={{ height: `100%`, border: 'solid 1px green' }}>
+								<div class="asn-page-div">
+									<MainComponent />
+								</div>
+							</Box>
 						</td>
 					</tr>
 				</table>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import Grid from '@mui/material/Grid2'
+import Grid from '@mui/material/Grid2'
 // import { FixedSizeList } from 'react-window';
 import { useKeycloak } from '@react-keycloak/web';
 // import './mainpage.css';
@@ -63,14 +63,16 @@ function MainComponent() {
 				' is-array ' + Array.isArray(value));
 			if (Array.isArray(value)) {
 				return (
-					<div item xs={6}>
+					<Grid item xs={6}>
 						<h2 class="mainpage-widget-header" id={key}>{key}</h2>
 						{value.map(user => <div>{user.name}</div>)}
-					</div>
+					</Grid>
 				)
 			} else {
 				return (
-					<div>{value}</div>
+					<Grid size={1}>
+						<div>{value}</div>
+					</Grid>
 				)
 			}
         }))
@@ -121,7 +123,9 @@ function MainComponent() {
         >
             Logout ({keycloak.tokenParsed.preferred_username})
         </button>
-		<MainDataList></MainDataList>
+		<Grid container columns={1}>
+			<MainDataList></MainDataList>
+		</Grid>
 		</div>
 	)
 
