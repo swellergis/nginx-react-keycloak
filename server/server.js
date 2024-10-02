@@ -31,6 +31,9 @@ const route = Router();
 
 route.get('/users', async (req, res, next) => {
     try {
+        // console.log(JSON.stringify(req.headers));
+        // console.log(JSON.stringify(req.header('access-token')));
+
         const data = await promise;
         return res.status(200).json({
             'message': 'Fetched successfully',

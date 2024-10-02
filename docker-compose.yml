@@ -3,6 +3,27 @@ networks:
     driver: bridge
 
 services:
+  keycloak-app:
+    image: skionus/keycloak-auth:25.0.6-1
+    container_name: keycloak-auth
+    ports:
+      # - "8443:8443"
+      - "8080:8080"
+    environment:
+      - KC_PROXY=edge
+      - KC_DEV_MODE=true
+      # change these values to point to a running postgres instance
+      - KC_DB_URL_HOST=192.168.57.35
+      - KC_DB_URL_PORT=5432
+      # - KC_DB_URL_DATABASE=keycloak_dev
+      - KC_DB_URL_DATABASE=kcdatabase
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+      - KC_DB_USERNAME=toor
+      - KC_DB_PASSWORD=Oicu812Oicu812
+    networks:
+      - dev
+
   nginx:
     image: nginx:stable-alpine
     container_name: nginx
