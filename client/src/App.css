@@ -1,9 +1,39 @@
+div[id="root"] {
+  display: grid;
+}
+
 .App {
+  font-family: arial, sans-serif;
+  background-color: #282c34;
+  min-height: 100vh;
+  color: white;
   text-align: center;
+  width: inherit;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: scroll;
+}
+.App::-webkit-scrollbar {
+  display: none;
+  overflow: scroll;
+}
+
+#login-button {
+  padding: 10px;
+  background-color: #282c34;
+  color: #61dafb;
+  font-size: calc(10px + 1vmin);
+  border-radius: 15px;
+  border: 2px solid #61dafb;
 }
 
 .App-logo {
   height: 40vmin;
+  pointer-events: none;
+}
+
+.App-logo1 {
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -14,6 +44,7 @@
 }
 
 .App-header {
+  font-family: arial, sans-serif;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -32,7 +63,477 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.fpall {
+  text-align: center;
+  width: 50%;
+}
+
+.fpbox {
+  padding: 3vh;
+  background-color: #61DAFB;
+  margin: 2vh;
+  display: inline-block;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.fplinks {
+  margin: 10px;
+}
+
+#sidenav {
+  width: 200px;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+div.snitem {
+  background-color: rgb(27 170 216);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #000000;
+  color: #fff;
+  padding: 20px;
+  margin-top: 0.2em;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* p.snitem:hover {
+  background-color: #61DAFB;
+  color: white;
+} */
+a.snlink {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.topnav {
+  background-color: #333;
+  font-family: arial, sans-serif;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  z-index: 10000;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #F2F2F2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #61DAFB;
+  color: black;
+  border-radius: 10px;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Left-aligned section inside the top navigation */
+div.topnav-left {
+  float: left;
+  display: flex;
+  align-items: center;
+}
+
+/* Right-aligned section inside the top navigation */
+div.topnav-right {
+  float: right;
+  padding-top: 0.8rem;
+}
+
+.subapptable {
+  width: 75%;
+}
+
+.mptable {
+  width: 90%;
+  vertical-align: top;
+  margin-top: 100px;
+}
+
+.sidenavtd {
+  width: 18rem;
+  vertical-align: top;
+}
+
+.centertd {
+  width: 80%;
+}
+
+.data-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.data-table table {
+  width: 100%;
+  height: 600px;
+  overflow: scroll;
+}
+
+.data-table td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 12px;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: #343a40;
+}
+
+.data-table tr:nth-child(even):hover {
+  background-color: white;
+  color: black;
+}
+
+.data-table tr:nth-child(odd) {
+  background-color: #454d55;
+  border-radius: 20%;
+}
+
+.data-table tr:nth-child(odd):hover {
+  background-color: white;
+  color: black;
+}
+
+.data-refresh {
+  padding: 20px;
+  margin: 10px;
+  color: white;
+  border-radius: 20px;
+  border: 2px solid white;
+  background-color: rgb(27 170 216);
+  color: white;
+}
+
+/*
+ * Stephen Styling
+ */
+
+/**
+  * DataGrid
+  */
+div.MuiDataGrid-row:nth-child(even) {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  background-color: #55585c;
+  border-left: 2px;
+  border-right: 2px;
+}
+
+div.MuiDataGrid-row:nth-child(odd) {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  background-color: #32363b;
+  border-left-width: 2px;
+  border-right-width: 2px;
+}
+
+div.MuiDataGrid-cellContent {
+  border-left-width: 2px solid;
+  border-right-width: 2px solid;
+}
+
+div.MuiDataGrid-root {
+  border-radius: 15px;
+}
+
+div.MuiDataGrid-columnHeaders {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  background-color: rgb(27 170 216);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom: 2px;
+}
+
+div.MuiDataGrid-footerContainer {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  background-color: rgb(27 170 216);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top: 2px;
+}
+
+p.MuiTablePagination-displayedRows {
+  color: white;
+}
+
+/**
+ * Buttons
+ */
+button.MuiButton-contained {
+  color: white;
+  font-size: .8rem;
+  text-shadow: 2px 2px 4px #000000;
+  border-radius: 15px;
+  background-color: green;
+}
+
+button.Mui-disabled {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: .8rem;
+  text-shadow: 2px 2px 4px white;
+  background-color: rgb(27 170 216);
+  border-radius: 15px;
+}
+
+button.MuiButton-containedPrimary {
+  color: white;
+  font-size: .8rem;
+  text-shadow: 2px 2px 4px #000000;
+  background-color: rgb(27 170 216);
+  border-radius: 15px;
+}
+
+
+/**
+ * TextField
+ */
+div.MuiTextField-root {
+  border-radius: 12px;
+  /* background-color: transparent; */
+}
+
+label.MuiInputLabel-root {
+  color: white;
+  font-family: Roboto,Helvetica,Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+div[class*=Mui-focused] {
+  color: white;
+  font-family: Roboto,Helvetica,Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+fieldset.MuiOutlinedInput-notchedOutline {
+  color: rgba(255,255,255,.8);
+  font-family: Roboto,Helvetica,Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  border-color: rgba(255,255,255,.8);
+  border-width: 2px;
+}
+div.MuiFilledInput-root {
+  border-radius: 12px;
+}
+
+div.MuiOutlinedInput-root {
+  border-radius: 12px;
+}
+
+div.MuiStandardInput-root {
+  border-radius: 12px;
+}
+
+input.MuiInputBase-input {
+  border-radius: 12px;
+  color: white;
+}
+
+/**
+ * Chips
+ */
+div.MuiChip-filled {
+  background-color: #0b7d0f;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 1rem;
+}
+
+/**
+  * List
+  */
+li.MuiListItem-root:nth-child(even) {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  background-color: #55585c;
+}
+
+li.MuiListItem-root:nth-child(odd) {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  background-color: #32363b;
+}
+
+div.MuiTableContainer-root {
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  /* border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px; */
+  max-height: 900px;
+}
+
+/* table header styling */
+th.MuiTableCell-head:first-child {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  background-color: rgb(27 170 216);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 0px;
+  border-bottom: 2px;
+  padding: 10px;
+  text-align: left;
+  border-right: 1px;
+  border-left: 0px;
+}
+
+th.MuiTableCell-head:last-child {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  background-color: rgb(27 170 216);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 15px;
+  border-bottom: 2px;
+  padding: 10px;
+  text-align: left;
+  border-right: 0px;
+  border-left: 1px;
+}
+
+th.MuiTableCell-head {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  background-color: rgb(27 170 216);
+  border-bottom: 2px;
+  padding: 10px;
+  text-align: left;
+  border-right: 1px;
+  border-left: 1px;
+}
+
+/* table body styling */
+tr.MuiTableRow-root:nth-child(even) {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  background-color: #55585c;
+  border-left-width: 1rem;
+  border-right-width: 1rem;
+}
+
+tr.MuiTableRow-root:nth-child(odd) {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  background-color: #32363b;
+  border-left-width: 1rem;
+  border-right-width: 1rem;
+}
+
+td.MuiTableCell-body {
+  color: white;
+  font-family: Consolas, Courier, Helvetica, Arial, sans-serif;
+}
+
+th.MuiTableCell-body {
+  color: white;
+  border-left: 0px;
+  border-right: 0px;
+  font-family: Consolas, Courier, Helvetica, Arial, sans-serif;
+}
+
+tr.MuiTableRow-footer {
+  color: unset;
+}
+
+td.MuiTableCell-footer {
+  color: white;
+}
+
+div.MuiTablePagination-root {
+  background-color: rgb(27 170 216);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+div.MuiToolbar-gutters {
+  background-color: inherit;
+}
+
+/** Modal styling*/
+div.MuiPaper-elevation {
+  border-radius: 15px;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  border-style: solid;
+  background-color: #333;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+  /* this also affects Snackbar width */
+  /* min-width: 512px; */
+}
+
+div.MuiSnackbarContent-message {
+  text-indent: 1rem;
+}
+
+div.MuiAlert-message {
+    padding: 8px 8px;
+}
+ 
+div.logi-snackbar-notification-message {
+  background-color: rgb(27 170 216);
+  border-radius: 8px;
+  margin-right: 8px;
+}
+
+h2.MuiDialogTitle-root {
+  background: rgb(27 170 216);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  font-size: 1rem;
+}
+
+div.modal-dialog-content-div {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+/** combobox A.K.A Select  styling **/
+div.MuiSelect-select {
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+}
+
+p.MuiFormHelperText-root {
+  color: red;
+}
+
+div.MuiInputBase-multiline {
+  color: #fff;
 }

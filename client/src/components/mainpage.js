@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid2'
 // import { FixedSizeList } from 'react-window';
 import { useKeycloak } from '@react-keycloak/web';
-// import './mainpage.css';
+import './mainpage.css';
 // import Snackbar from '@mui/material/Snackbar';
 // import MuiAlert from '@mui/material/Alert';
 
-export const fetchErrorMessage = "An issue has occurred with fetching data.  If problem persists please contact ispss.cyclops@lumen.com";
+export const fetchErrorMessage = "An issue has occurred with fetching data.  If problem persists please contact foo@lumen.com";
 
 function MainComponent() {
     const [users, setUsers] = useState([]);
 	const { keycloak } = useKeycloak();
 
-	const [mpdata, setMpdata] = useState([]);
+	const [mpdata, setMpdata] = useState({});
 	const [fetchErrorMessageOpen, setFetchErrorMessageOpen] = useState(false);
 	/* Number of milliseconds to show notifications */
 	const notificationAutoclose = 5000;
@@ -40,7 +40,7 @@ function MainComponent() {
 			// else return response.text();
 			else return response.json();
 		}).then(resp => {
-			console.log('response: ' + resp);
+			// console.log('response: ' + resp);
 			// setMpdata(JSON.parse(resp));
 			setMpdata(resp);
             // setUsers(resp['users']);
@@ -57,15 +57,15 @@ function MainComponent() {
 
 		const { snackbarHorizontal, snackbarVertical } = snackState;
 		return (Object.entries(mpdata).map(([key, value]) => {
-			console.log('key: ' + key + 
-				' value: ' + JSON.stringify(value) + 
-				' item-count: ' + value.length +
-				' is-array ' + Array.isArray(value));
+			// console.log('key: ' + key + 
+			// 	' value: ' + JSON.stringify(value) + 
+			// 	' item-count: ' + value.length +
+			// 	' is-array ' + Array.isArray(value));
 			if (Array.isArray(value)) {
 				return (
 					<Grid item xs={6}>
 						<h2 class="mainpage-widget-header" id={key}>{key}</h2>
-						{value.map(user => <div>{user.name}</div>)}
+						{value.map(user => <div id={user._id}>{user.name}</div>)}
 					</Grid>
 				)
 			} else {

@@ -1,0 +1,15 @@
+td.contact-page-td {
+    display: unset;
+  }
+  
+  div.contact-page-div {
+    border-radius: 15px;
+  }
+  
+  p.contact-page-p {
+    margin-top: 3.8rem;
+    min-width: 500px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
