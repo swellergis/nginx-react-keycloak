@@ -45,8 +45,25 @@ const promiseContactEmail = new Promise((resolve, reject) => {
         resolve(contactemail)
     }, 3000)
 })
+const promiseHealthCheck = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('aok')
+    }, 3000)
+})
 
 const route = Router();
+
+// health-check
+route.get('/', async (req, res, next) => {
+    try {
+        const data = await promiseHealthCheck;
+        return res.status(200).json({
+            data
+        })
+    } catch (error) {
+        console.log(error.message)
+    }
+});
 
 route.get('/v3/version_number', async (req, res, next) => {
     try {
